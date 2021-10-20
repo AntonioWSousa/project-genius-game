@@ -54,10 +54,18 @@ let check = () => {
 }
 //fim da função para checar se os botões clicados são os mesmo da ordem gerada
 
+//início da função para o clique do usuário
+let click = (color) => {
+  clickOrder[clickOrder.length] = color;
+  createColorElement(color).classList.add('selected');
+
+  setTimeout(() => {
+    createColorElement(color).classList.remove('selected');
+  })
+}
+//fim da função para o clique do usuário
 
 
 
 
 
-
-//fim da função para acender a próxima cor
