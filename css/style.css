@@ -26,24 +26,32 @@ body {
   grid-area: blue;
   background: blue;
   border-bottom-right-radius: 100%;
+  border-style: ridge;
+  border-color: blue;
 }
 
 .yellow {
   grid-area: yellow;
   background: yellow;
   border-bottom-left-radius: 100%;
+  border-style: ridge;
+  border-color: yellow;
 }
 
 .red {
   grid-area: red;
   background: red;
   border-top-right-radius: 100%;
+  border-style: ridge;
+  border-color: red;
 }
 
 .green {
   grid-area: green;
   background: green;
   border-top-left-radius: 100%;
+  border-style: ridge;
+  border-color: green;
 }
 
 .selected {
