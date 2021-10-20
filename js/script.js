@@ -23,3 +23,41 @@ let shuffleOrder = () => {
     lightColor(elementColor, Number(i) + 1)
   }
 }
+
+//fim da função para criar ordem aletoria de cores
+
+//inicio da função para acender a próxima cor
+let lightColor = (element, number) => {
+  number = number * 500;
+  setTimeout(() => {
+    element.classList.add("selected");
+  }, number - 250);
+  setTimeout(() => {
+    element.classList.remove("selected");
+  });
+};
+
+//fim da função para acender a próxima cor
+
+//início da função para checar se os botões clicados são os mesmo da ordem gerada 
+let check = () => {
+  for (let i in clickOrder) {
+    if (clickOrder[i] != order[i]) {
+      lose();
+      break;
+    }
+  }
+  if (clickOrder.length == order.length) {
+    alert('Pontuação: $(score)\nVocê acertou! Iniciando próximo nível!');
+    nextLevel();
+  }
+}
+//fim da função para checar se os botões clicados são os mesmo da ordem gerada
+
+
+
+
+
+
+
+//fim da função para acender a próxima cor
