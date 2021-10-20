@@ -20,7 +20,7 @@ let shuffleOrder = () => {
 
   for (let i in order) {
     let elementColor = createColorElement(order[i]);
-    lightColor(elementColor, Number(i) + 1)
+    lightColor(elementColor, Number(i) + 1);
   }
 }
 
@@ -61,7 +61,8 @@ let click = (color) => {
 
   setTimeout(() => {
     createColorElement(color).classList.remove('selected');
-  })
+    checkOrder();
+  }, 350);
 }
 //fim da função para o clique do usuário
 
@@ -104,6 +105,16 @@ let playGame = () => {
 
   nextLevel();
 }
+
+//início dos geradores de eventos de cliques para as cores
+green.onclick = () => click(0);
+red.onclick = () => click(1);
+yellow.onclick = () => click(2);
+blue.onclick = () => click(3);
+//fim dos geradores de eventos de cliques para as cores
+
+//início do jogo
+playGame();
 
 
 
