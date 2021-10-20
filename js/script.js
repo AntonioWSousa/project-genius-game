@@ -26,7 +26,7 @@ let shuffleOrder = () => {
 
 //fim da função para criar ordem aletoria de cores
 
-//inicio da função para acender a próxima cor
+//início da função para acender a próxima cor
 let lightColor = (element, number) => {
   number = number * 500;
   setTimeout(() => {
@@ -43,12 +43,12 @@ let lightColor = (element, number) => {
 let check = () => {
   for (let i in clickOrder) {
     if (clickOrder[i] != order[i]) {
-      lose();
+      gameOver();
       break;
     }
   }
   if (clickOrder.length == order.length) {
-    alert('Pontuação: $(score)\nVocê acertou! Iniciando próximo nível!');
+    alert('Pontuação: ${score}\nVocê acertou! Iniciando próximo nível!');
     nextLevel();
   }
 }
@@ -82,7 +82,28 @@ let createColorElement = (color) => {
 }
 //fim da função que retorna a cor
 
+//início da função que passa para o próximo nível do jogo
+let nextLevel = () => {
+  score++;
+  shuffleOrder();
+}
+//fim da função que passa para o próximo nível do jogo
 
+//início da função para game over
+let gameOver = () => {
+  alert('Pontuação: ${score}\nVocê perdeu o jogo!\nClique em OK para iniciar um novo jogo!');
+  order = [];
+  clickOrder = [];
+
+  playGame();
+}
+
+//início da função para iniciar o jogo
+let playGame = () => {
+  alert('Bem vindo ao jogo Sequência! Iniciando novo jogo!');
+
+  nextLevel();
+}
 
 
 
